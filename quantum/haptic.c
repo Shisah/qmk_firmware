@@ -89,6 +89,12 @@ void haptic_init(void) {
 #ifdef HAPTIC_ENABLE_STATUS_LED
     setPinOutput(HAPTIC_ENABLE_STATUS_LED);
 #endif
+    if(HAPTIC_FEEDBACK_DEFAULT){
+        haptic_enable();
+    }
+    else{
+        haptic_disable();
+    }
 }
 
 void haptic_task(void) {

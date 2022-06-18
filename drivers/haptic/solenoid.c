@@ -159,7 +159,9 @@ void solenoid_setup(void) {
         writePin(solenoid_pads[i], !solenoid_active_state[i]);
         setPinOutput(solenoid_pads[i]);
         if ((!HAPTIC_OFF_IN_LOW_POWER) || (usb_device_state == USB_DEVICE_STATE_CONFIGURED)) {
-            solenoid_fire(i);
+            if(!SOLENOID_SKIP_SETUP_CHECK){
+                solenoid_fire(i);
+            }
         }
     }
 }

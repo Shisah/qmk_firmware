@@ -45,6 +45,10 @@
 #    define SOLENOID_BUZZ_NONACTUATED SOLENOID_MIN_DWELL
 #endif
 
+#ifndef SOLENOID_SKIP_SETUP_CHECK
+#    define SOLENOID_SKIP_SETUP_CHECK 0
+#endif
+
 #ifndef SOLENOID_PINS
 #    ifdef SOLENOID_PIN
 #        define SOLENOID_PINS \
